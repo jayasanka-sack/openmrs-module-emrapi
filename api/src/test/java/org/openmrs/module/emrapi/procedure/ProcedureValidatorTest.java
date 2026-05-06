@@ -105,10 +105,10 @@ class ProcedureValidatorTest {
 	}
 	
 	@Test
-	void validate_shouldRejectWhenBodySiteIsNull() {
+	void validate_shouldPassWhenBodySiteIsNull() {
 		procedure.setBodySite(null);
 		validator.validate(procedure, errors);
-		assertTrue(hasErrorCode("Procedure.error.bodySiteRequired"));
+		assertFalse(hasErrorCode("Procedure.error.bodySiteRequired"));
 	}
 	
 	@Test
